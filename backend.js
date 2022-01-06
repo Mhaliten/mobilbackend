@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
+//----------------------------------------------------------------------------------------- Tipusok lekérdezése
 
 app.get('/tipusok', (req, res) => {
   var mysql = require('mysql')
