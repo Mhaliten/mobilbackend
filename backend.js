@@ -35,7 +35,7 @@ app.get('/tipusok', (req, res) => {
 
 })
 
-app.get('/tipus_lekerdez', (req, res) => {
+app.post('/tipus_lekerdez', (req, res) => {
   var mysql = require('mysql')
   var connection = mysql.createConnection({
     host: 'localhost',
