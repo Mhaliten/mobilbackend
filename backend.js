@@ -35,6 +35,29 @@ app.get('/tipusok', (req, res) => {
 
 })
 
+app.get('/etkez', (req, res) => {
+  var mysql = require('mysql')
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'szabo_mate_zarodoga'
+  })
+  
+  connection.connect()
+  
+  connection.query('SELECT * from etel_tipusok', function (err, rows, fields) {
+    if (err) throw err
+  
+    console.log(rows)
+
+    res.send(rows)
+  })
+  
+  connection.end()    
+
+})
+
 app.post('/tipus_lekerdez', (req, res) => {
   var mysql = require('mysql')
   var connection = mysql.createConnection({
